@@ -135,14 +135,14 @@ double EvaluateTerm(const char s[], int& idx) {
 	// It calculates the expression in parenthesis or converts the string to float number. idx value is updated to the next unread index.
 
 	if (s[idx] == '(') {
-		int pcnt = 1;
+		int depth = 1;
 		int temp = ++idx;
 
-		while (pcnt > 0) {
+		while (depth > 0) {
 			if (s[idx] == '(')
-				pcnt++;
+				depth++;
 			else if (s[idx] == ')')
-				pcnt--;
+				depth--;
 			idx++;
 		}
 
