@@ -22,14 +22,14 @@ function EvaluateTerm(s) {
     if (s.s[s.idx] == '(') {
         s.idx += 1;
         let temp = s.idx;
-        let pcnt = 1;
+        let depth = 1;
 
-        while (pcnt > 0) {
+        while (depth > 0) {
             if (s.s[s.idx] == '(') {
-                pcnt += 1;
+                depth += 1;
             }
             else if (s.s[s.idx] == ')') {
-                pcnt -= 1;
+                depth -= 1;
             }
             s.idx += 1;
         }
